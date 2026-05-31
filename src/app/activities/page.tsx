@@ -2,6 +2,8 @@ import { Archive, CheckCircle2, GalleryHorizontalEnd } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { activityRecords, activityTimeline } from "@/data/mock";
 
+const basePath = process.env.PAGES_BASE_PATH || "";
+
 export default function ActivitiesPage() {
   return (
     <PageShell
@@ -30,7 +32,7 @@ export default function ActivitiesPage() {
           <article key={activity.title} className="terminal-panel overflow-hidden rounded-md">
             <div className="relative flex aspect-[16/9] items-end overflow-hidden border-b border-thu-neon/15 bg-black">
               <img
-                src={activity.image}
+                src={`${basePath}${activity.image}`}
                 alt={activity.title}
                 loading="lazy"
                 decoding="async"
